@@ -25,3 +25,51 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('css/themify-icons.css'); ?>" rel="stylesheet">
+
+    <style type="text/css">
+        .card {
+  .nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent; }
+
+.navbar {
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  z-index: 3; }
+  .navbar .navbar-brand {
+    font-weight: 600;
+    margin: 5px 0px;
+    padding: 20px 15px;
+    font-size: 20px; }
+  .navbar .navbar-nav > li > a {
+    line-height: 1.42857;
+    margin: 15px 0px;
+    padding: 10px 15px; }
+    .navbar .navbar-nav > li > a i,
+    .navbar .navbar-nav > li > a p {
+      display: inline-block;
+      margin: 0; }
+    .navbar .navbar-nav > li > a i {
+      position: relative;
+      top: 1px; }
+  .navbar .navbar-nav > li > a.btn {
+    margin: 15px 3px;
+    padding: 7px 18px; }
+  .navbar .btn {
+    margin: 15px 3px;
+    font-size: 14px; }
+  .navbar .btn-simple {
+    font-size: 16px; }
+
+.navbar-nav > li > .dropdown-menu {
+  border-radius: 6px;
+  margin-top: -5px; }
+    </style>
+
+   <script type="text/javascript" src="<?php echo base_url('js/paper-dashboard.js'); ?>"></script>
+   <script type="text/javascript">
+       $(document).ready(function() {
+
+       });
+   </script>
