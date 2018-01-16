@@ -27,7 +27,6 @@
     <link href="<?php echo base_url('css/themify-icons.css'); ?>" rel="stylesheet">
 
     <style type="text/css">
-        .card {
   .nav > li > a:hover,
 .nav > li > a:focus {
   background-color: transparent; }
