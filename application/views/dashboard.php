@@ -54,45 +54,39 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
-                        <i class="ti-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="table.html">
+                    <a href="<?php echo base_url('index.php/Welcome/masuk/'); ?>">
                         <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
+                        <p>AGENDA SURAT MASUK</p>
                     </a>
                 </li>
                 <li>
                     <a href="typography.html">
                         <i class="ti-text"></i>
-                        <p>Typography</p>
+                        <p>DISPOSISI</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="<?php echo base_url('index.php/Welcome/keluar/'); ?>">
                         <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
+                        <p>AGENDA SURAT KELUAR</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="<?php echo base_url('index.php/Welcome/arsip/'); ?>">
                         <i class="ti-map"></i>
-                        <p>Maps</p>
+                        <p>ARSIP</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="<?php echo base_url('index.php/Welcome/no_agenda'); ?>">
                         <i class="ti-bell"></i>
-                        <p>Notifications</p>
+                        <p>NOMOR AGENDA</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="<?php echo base_url('index.php/Welcome/no_wilayah'); ?>">
                         <i class="ti-export"></i>
-                        <p>Upgrade to PRO</p>
+                        <p>NOMOR WILAYAH</p>
                     </a>
                 </li>
             </ul>
