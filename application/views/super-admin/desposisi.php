@@ -17,8 +17,8 @@
                     <div>
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Agenda Surat Masuk
-                                    <a href="<?php echo base_url('index.php/Welcome/input_masuk'); ?>" class="btn btn-warning">Tambah</a>
+                                <h4 class="title">DISPOSISI
+                                    <a href="<?php echo base_url('index.php/desposisi/input_despos'); ?>" class="btn btn-warning">Tambah</a>
                                 </h4>
                               
                             </div>
@@ -27,32 +27,32 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <th>No</th>
-                                    	<th>Tanggal</th>
-                                    	<th>kode_Agenda</th>
+                                    	<th>Tanggal Surat</th>
+                                    	<th>Asal Surat</th>
                                     	<th>No Surat</th>
-                                    	<th>Dari</th>
+                                    	<th>Kode Agenda</th>
                                         <th>Perihal</th>
-                                        <th>Pengelola</th>
+                                        <th>Tanggal Diterima</th>
                                         <th>Aksi</th>
                                     </thead>
                                     <tbody>
                                         <?php 
                                             $no = 1;
-                                            foreach ($masuk as $u) {
+                                            foreach ($desposisi as $d) {
                                          ?>
                                          <tr>
                                             <td><?php echo $no++; ?></td>
-                                            <td><?php echo $u->tgl_surat; ?></td>
-                                            <td><?php echo $u->kode_agenda; ?></td>
-                                            <td><?php echo $u->no_surat; ?></td>
-                                            <td><?php echo $u->dari; ?></td>
-                                            <td><?php echo $u->perihal; ?></td>
-                                            <td><?php echo $u->pengelola; ?></td>
+                                            <td><?php echo $d->tgl_surat; ?></td>
+                                            <td><?php echo $d->asal_surat; ?></td>
+                                            <td><?php echo $d->no_surat; ?></td>
+                                            <td><?php echo $d->kode_agenda; ?></td>
+                                            <td><?php echo $d->perihal; ?></td>
+                                            <td><?php echo $d->diterima_tgl; ?></td>
                                             <td>
                                                 <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                                                <a href="<?php echo base_url('index.php/Welcome/editmas/').$u->id_masuk; ?>" class="btn btn-primary">
+                                                <a href="<?php echo base_url('index.php/desposisi/editdespos').$d->id_despos; ?>" class="btn btn-primary">
                                                     <i class="fa fa-edit"></i></a>
-                                                <a href="<?php echo base_url('index.php/Welcome/delmasuk/').$u->id_masuk; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('index.php/desposisi/deldesposisi').$d->id_despos; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                             </td>
                                              <?php } ?>
                                          </tr>

@@ -8,6 +8,11 @@ class Masuk extends CI_Model {
 		parent::__construct();
 		$this->load->database();
 	}
+
+	public function detail($table,$where)
+	{
+		return $this->db->get_where($table,$where);
+	}
  
  //mod surat masuk
  public function tabmasuk($table)
@@ -22,7 +27,7 @@ class Masuk extends CI_Model {
 	}
 public function get_masuk()
 	{
-		$query = $this->db->query("SELECT MAX(no_urut) AS no_urut FROM surat_masuk");
+		$query = $this->db->query("SELECT MAX(id_masuk) AS id_masuk FROM surat_masuk");
 		return $query->row_array();
 	}
 
@@ -31,11 +36,63 @@ public function delmasuk($table,$where){
 		$this->db->delete($table); 
 	}
 
-public function detail($table,$where)
-	{
-		return $this->db->get_where($table,$where);
-	}
 public function editmas($table,$object,$where)
+	{
+		$this->db->update($table,$object,$where);
+	}
+
+	//desposisi
+
+	public function despos($table)
+ {
+ 	$query = $this->db->get('desposisi')->result();
+ 	return $query;
+ }
+
+ public function add_despos($table,$object)
+	{
+		$this->db->insert($table,$object);
+	}
+public function get_despos()
+	{
+		$query = $this->db->query("SELECT MAX(id_despos) AS id_despos FROM desposisi");
+		return $query->row_array();
+	}
+
+public function deldespos($table,$where){
+		$this->db->where($where);
+		$this->db->delete($table); 
+	}
+
+public function editdespos($table,$object,$where)
+	{
+		$this->db->update($table,$object,$where);
+	}
+
+	//surat keluar
+
+	public function suker($table)
+ {
+ 	$query = $this->db->get('surat_keluar')->result();
+ 	return $query;
+ }
+
+ public function add_suker($table,$object)
+	{
+		$this->db->insert($table,$object);
+	}
+public function get_suker()
+	{
+		$query = $this->db->query("SELECT MAX(id_keluar) AS id_keluar FROM surat_keluar");
+		return $query->row_array();
+	}
+
+public function delsuker($table,$where){
+		$this->db->where($where);
+		$this->db->delete($table); 
+	}
+
+public function editsuker($table,$object,$where)
 	{
 		$this->db->update($table,$object,$where);
 	}

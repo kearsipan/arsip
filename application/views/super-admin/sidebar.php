@@ -27,13 +27,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url('index.php/desposisi/desposisi'); ?>">
                         <i class="ti-text"></i>
                         <p>DISPOSISI</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/Welcome/keluar/'); ?>">
+                    <a href="<?php echo base_url('index.php/suker/suker'); ?>">
                         <i class="ti-pencil-alt2"></i>
                         <p>AGENDA SURAT KELUAR</p>
                     </a>

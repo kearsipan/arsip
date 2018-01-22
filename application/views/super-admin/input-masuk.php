@@ -31,8 +31,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Kode Surat</label>
-                                                <input type="combobox" class="form-control border-input" name="kode">
+                                                <label>Kode Agenda</label>
+                                                <input type="text" class="form-control border-input" name="kode">
                                             </div>
                                         </div>
                                     </div>

@@ -45,15 +45,7 @@ class Welcome extends CI_Controller {
 	{
 		
 		$id = $this->masuk->get_masuk();
-		if ($id) {
-			$nilai = substr($id['no_urut'], 1);
-			$nilai_baru = (int) $nilai;
-			$nilai_baru++;
-			$nilai_baru2 = "M".str_pad($nilai_baru, 4, "0", STR_PAD_LEFT);
-		}else{
-			$nilai_baru2 = "M0001";
-		}
-		$object = array('no_urut' => $nilai_baru2 , 
+		$object = array(
 						'tgl_surat' => $this->input->post('tanggal'),
 						'kode_agenda' => $this->input->post('kode'),
 						'no_surat' => $this->input->post('nosur'),
@@ -66,23 +58,23 @@ class Welcome extends CI_Controller {
 
 	public function delmasuk($id)
 	{
-		$where = array('no_urut' =>$id );
+		$where = array('id_masuk' =>$id );
 		$this->masuk->delmasuk('surat_masuk',$where);
 		redirect('Welcome/masuk');
 	}
 
 	public function editmas($id)
 	{
-		$where = array('no_urut' => $id);
-		$data['masuk'] = $this->masuk->detail('surat_masuk',$where)->result();
+		$where = array('id_masuk' => $id);
+		$data['editmas'] = $this->masuk->detail('surat_masuk',$where)->result();
 		$this->load->view('super-admin/edit_masuk',$data);
 	}
 
 	public function editmasuk()
 	{
-		$id = $this->input->post('no_urut');
-		$where = array('no_urut' => $id);
-		$object = array('no_urut' => $id, 
+		
+		$where = array('id_masuk' => $id);
+		$object = array('id_masuk' => $id, 
 						'tgl_surat' => $this->input->post('tanggal'),
 						'kode_agenda' => $this->input->post('kode'),
 						'no_surat' => $this->input->post('nosur'),

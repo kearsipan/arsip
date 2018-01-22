@@ -1,85 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<?php include 'css.php'; ?>
+    <?php include 'css.php'; ?>
 
 </head>
 <body>
 
-<?php include 'sidebar.php'; ?>
-<?php include 'navigasi.php'; ?>
+    <?php include 'sidebar.php'; ?>
+
+    <?php include 'navigasi.php'; ?>
+
 
         <div class="content">
             <div class="container-fluid">
-                    <div class="col-md-12">
-                        <div class="card card-plain">
+                <div class="row">
+                    <div>
+                        <div class="card">
                             <div class="header">
-                                <h4 class="title">Table on Plain Background</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">Agenda Surat Keluar
+                                    <a href="<?php echo base_url('index.php/suker/input_keluar'); ?>" class="btn btn-warning">Tambah</a>
+                                </h4>
+                              
                             </div>
+                            
                             <div class="content table-responsive table-full-width">
-                                <table class="table table-hover">
+                                <table class="table table-striped">
                                     <thead>
-                                        <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
+                                        <th>No</th>
+                                        <th>Tanggal</th>
+                                        <th>kode_Agenda</th>
+                                        <th>No Surat</th>
+                                        <th>Kepada</th>
+                                        <th>Perihal</th>
+                                        <th>Pengelola</th>
+                                        <th>Aksi</th>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
+                                        <?php 
+                                            $no = 1;
+                                            foreach ($suker as $k) {
+                                         ?>
+                                         <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $k->tgl_surat; ?></td>
+                                            <td><?php echo $k->kode_agenda; ?></td>
+                                            <td><?php echo $k->no_surat; ?></td>
+                                            <td><?php echo $k->kepada; ?></td>
+                                            <td><?php echo $k->perihal; ?></td>
+                                            <td><?php echo $k->pengelola; ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                                <a href="<?php echo base_url('index.php/Welcome/').$k->id_keluar; ?>" class="btn btn-primary">
+                                                    <i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('index.php/Welcome/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                             <?php } ?>
+                                         </tr>
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-            </div>
-        </div>
 
         <footer class="footer">
             <div class="container-fluid">
@@ -103,7 +84,7 @@
                         </li>
                     </ul>
                 </nav>
-				<div class="copyright pull-right">
+                <div class="copyright pull-right">
                     &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
                 </div>
             </div>
@@ -116,7 +97,7 @@
 
 </body>
 
-   <?php include 'js.php'; ?>
+  <?php include 'js.php'; ?>
 
 
 </html>
