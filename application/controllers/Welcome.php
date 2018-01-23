@@ -97,9 +97,9 @@ class Welcome extends CI_Controller {
 	public function detail($id)
 	{
 		$where = array('id_despos' => $id);
-		$data['editmas'] = $this->db->get('surat_masuk')->result();
+		$data['editmas'] = $this->db->get('surat_masuk',$where)->result();
 		$data['despos'] = $this->masuk->detail('desposisi',$where)->result();
-		$this->load->view('super-admin/input_despos',$data);
+		$this->load->view('super-admin/detail',$data);
 	}
 
 	public function add_despos()
@@ -114,6 +114,8 @@ class Welcome extends CI_Controller {
 		$this->masuk->add_despos('desposisi',$object);
 		redirect('Welcome/desposisi');
 	}
+
+	//tutup desposisi
 
 	public function arsip()
 	{
