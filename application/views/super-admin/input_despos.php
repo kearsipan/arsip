@@ -73,12 +73,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Edit</button>
-                                    </div><br>
-                                    <div class="text-center">
-                                        <a href="<?php echo base_url('index.php/Welcome/masuk'); ?>" class="btn btn-primary">Kembali</a>
-                                    </div>
                                     <div class="clearfix"></div>
                                 </form>
                                     <?php endforeach ?>

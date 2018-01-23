@@ -109,8 +109,8 @@ class Welcome extends CI_Controller {
 		$object = array(
 						'asal_surat' => $this->input->post('asal'),
 						'diterima_tgl' => $this->input->post('diterima'),
-						'pemberi_Desposisi' => $this->input->post('pemberi'),
-						'teusan' => $this->input->post('terusan'),
+						'pemberi_desposisi' => $this->input->post('pemberi'),
+						'terusan' => $this->input->post('terusan'),
 						'untuk' => $this->input->post('untuk'),
 						'isi_desposisi'=>$this->input->post('isi'));
 		$this->masuk->add_despos('desposisi',$object);

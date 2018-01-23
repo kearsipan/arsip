@@ -32,7 +32,7 @@ class Suker extends CI_Controller {
 						'kepada' => $this->input->post('kepada'),
 						'perihal' => $this->input->post('perihal'),
 						'pengelola'=>$this->input->post('pengelola'));
-		$this->masuk->add_keluar('surat_keluar',$object);
+		$this->masuk->add_suker('surat_keluar',$object);
 		redirect('suker/suker');
 	}
 
@@ -50,7 +50,7 @@ class Suker extends CI_Controller {
 		$this->load->view('super-admin/edit_suker',$data);
 	}
 
-	/*public function editsuker()
+	public function edit_keluar()
 	{
 		
 		$where = array('id_keluar' => $id);
@@ -62,8 +62,8 @@ class Suker extends CI_Controller {
 						'perihal' => $this->input->post('perihal'),
 						'pengelola'=>$this->input->post('pengelola'));
 		$this->masuk->editsuker('surat_keluar',$object,$where);
-		redirect('suker/suker'.$id);
-	}*/
+		redirect('suker/suker');
+	}
 
 }
 

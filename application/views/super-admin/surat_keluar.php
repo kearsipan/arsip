@@ -48,10 +48,11 @@
                                             <td><?php echo $k->perihal; ?></td>
                                             <td><?php echo $k->pengelola; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                                                <a href="<?php echo base_url('index.php/Welcome/').$k->id_keluar; ?>" class="btn btn-primary">
-                                                    <i class="fa fa-edit"></i></a>
-                                                <a href="<?php echo base_url('index.php/Welcome/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i>
+                                                </a>
+                                                <a href="<?php echo base_url('index.php/suker/edit_keluar/').$k->id_keluar; ?>" class="btn btn-primary"><i class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="<?php echo base_url('index.php/suker/delsuker/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                             </td>
                                              <?php } ?>
                                          </tr>
