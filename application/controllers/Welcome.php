@@ -105,16 +105,14 @@ class Welcome extends CI_Controller {
 	public function add_despos()
 	{
 		
-		$id = $this->masuk->get_masuk();
-		$object = array(
-						'asal_surat' => $this->input->post('asal'),
+		$object = array('asal_surat' => $this->input->post('asal'),
 						'diterima_tgl' => $this->input->post('diterima'),
-						'pemberi_desposisi' => $this->input->post('pemberi'),
+						'pemberi_despos' => $this->input->post('pemberi'),
 						'terusan' => $this->input->post('terusan'),
 						'untuk' => $this->input->post('untuk'),
 						'isi_desposisi'=>$this->input->post('isi'));
 		$this->masuk->add_despos('desposisi',$object);
-		redirect('Welcome/deposisi');
+		redirect('Welcome/desposisi');
 	}
 
 	public function arsip()
