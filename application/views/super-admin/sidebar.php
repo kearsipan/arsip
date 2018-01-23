@@ -1,11 +1,5 @@
-<div class="wrapper">
+
 	<div class="sidebar" data-background-color="white" data-active-color="danger">
-
-    <!--
-		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
-		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-	-->
-
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
@@ -27,7 +21,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/desposisi/desposisi'); ?>">
+                    <a href="<?php echo base_url('index.php/Welcome/desposisi'); ?>">
                         <i class="ti-text"></i>
                         <p>DISPOSISI</p>
                     </a>

@@ -49,24 +49,9 @@ public function editmas($table,$object,$where)
  	return $query;
  }
 
- public function add_despos($table,$object)
+  public function add_despos($table,$object)
 	{
 		$this->db->insert($table,$object);
-	}
-public function get_despos()
-	{
-		$query = $this->db->query("SELECT MAX(id_despos) AS id_despos FROM desposisi");
-		return $query->row_array();
-	}
-
-public function deldespos($table,$where){
-		$this->db->where($where);
-		$this->db->delete($table); 
-	}
-
-public function editdespos($table,$object,$where)
-	{
-		$this->db->update($table,$object,$where);
 	}
 
 	//surat keluar

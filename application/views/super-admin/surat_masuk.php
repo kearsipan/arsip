@@ -5,9 +5,9 @@
 
 </head>
 <body>
-
+<div class="wrapper">
     <?php include 'sidebar.php'; ?>
-
+    <div class="main-panel">
     <?php include 'navigasi.php'; ?>
 
 
@@ -93,8 +93,8 @@
 
     </div>
 </div>
-
-
+</div>
+</div>
 </body>
 
   <?php include 'js.php'; ?>

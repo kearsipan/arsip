@@ -72,7 +72,6 @@ class Welcome extends CI_Controller {
 
 	public function editmasuk()
 	{
-		
 		$where = array('id_masuk' => $id);
 		$object = array('id_masuk' => $id, 
 						'tgl_surat' => $this->input->post('tanggal'),
@@ -81,13 +80,41 @@ class Welcome extends CI_Controller {
 						'dari' => $this->input->post('dari'),
 						'perihal' => $this->input->post('perihal'),
 						'pengelola'=>$this->input->post('pengelola'));
+		//die(var_dump($object));
 		$this->masuk->editmas('surat_masuk',$object,$where);
 		redirect('Welcome/masuk'.$id);
 	}
 
-	public function keluar()
+	//tutup surat masuk
+
+	//desposisi
+	public function desposisi()
 	{
-		$this->load->view('super-admin/surat_keluar'); 		
+		$data['ms'] = $this->masuk->tabmasuk('surat_masuk');
+		$this->load->view('super-admin/desposisi',$data);
+	}
+
+	public function detail($id)
+	{
+		$where = array('id_despos' => $id);
+		$data['editmas'] = $this->db->get('surat_masuk')->result();
+		$data['despos'] = $this->masuk->detail('desposisi',$where)->result();
+		$this->load->view('super-admin/input_despos',$data);
+	}
+
+	public function add_despos()
+	{
+		
+		$id = $this->masuk->get_masuk();
+		$object = array(
+						'asal_surat' => $this->input->post('asal'),
+						'diterima_tgl' => $this->input->post('diterima'),
+						'pemberi_Desposisi' => $this->input->post('pemberi'),
+						'teusan' => $this->input->post('terusan'),
+						'untuk' => $this->input->post('untuk'),
+						'isi_desposisi'=>$this->input->post('isi'));
+		$this->masuk->add_despos('desposisi',$object);
+		redirect('Welcome/deposisi');
 	}
 
 	public function arsip()

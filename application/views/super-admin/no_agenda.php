@@ -6,8 +6,10 @@
 </head>
 <body>
 
-<?php include 'sidebar.php'; ?>
-<?php include 'navigasi.php'; ?>
+<div class="wrapper">
+    <?php include 'sidebar.php'; ?>
+    <div class="main-panel">
+    <?php include 'navigasi.php'; ?>
 
         <div class="content">
             <div class="container-fluid">

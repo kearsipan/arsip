@@ -6,12 +6,14 @@
 </head>
 <body>
 
-<?php include 'sidebar.php'; ?>
-<?php include 'navigasi.php'; ?>
+<div class="wrapper">
+    <?php include 'sidebar.php'; ?>
+    <div class="main-panel">
+    <?php include 'navigasi.php'; ?>
 
     
         <?php foreach ($editmas as $u ): ?>
-    <form method="post" action="<?php echo base_url('index.php/Welcome/editmasuk').$u->id_masuk; ?>">
+    <form method="post" action="<?php echo base_url('index.php/Welcome/editmasuk/').$u->id_masuk; ?>">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -91,36 +93,8 @@
         </div>
         </form>
 
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-				<div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
-
     </div>
+</div>
 </div>
 
 

@@ -5,10 +5,10 @@
 
 </head>
 <body>
-
-<?php include 'sidebar.php'; ?>
-<?php include 'navigasi.php'; ?>
-
+<div class="wrapper">
+    <?php include 'sidebar.php'; ?>
+    <div class="main-panel">
+    <?php include 'navigasi.php'; ?>
     <form method="post" action="<?php echo base_url('index.php/Welcome/add_suker'); ?>">
         <div class="content">
             <div class="container-fluid">
