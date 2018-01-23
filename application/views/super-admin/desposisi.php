@@ -39,7 +39,7 @@
                                                 <a href="<?php echo base_url('index.php/Welcome/detail/').$u->id_masuk; ?>" class="btn btn-info">
                                                     <i class="fa fa-eye"></i>Detail</a>
 
-                                                <a href="<?php echo base_url('index.php/Welcome/deldespos/').$u->id_masuk;; ?>" class="btn btn-danger">
+                                                <a href="<?php echo base_url('index.php/Welcome/deldespos/').$u->id_masuk; ?>" class="btn btn-danger">
                                                     <i class="fa fa-trash"></i></a>
                                             </td>
 

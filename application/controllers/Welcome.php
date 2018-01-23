@@ -70,7 +70,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('super-admin/edit_masuk',$data);
 	}
 
-	public function editmasuk()
+	public function editmasuk($id)
 	{
 		$where = array('id_masuk' => $id);
 		$object = array('id_masuk' => $id, 
@@ -82,7 +82,7 @@ class Welcome extends CI_Controller {
 						'pengelola'=>$this->input->post('pengelola'));
 		//die(var_dump($object));
 		$this->masuk->editmas('surat_masuk',$object,$where);
-		redirect('Welcome/masuk'.$id);
+		redirect('Welcome/masuk');
 	}
 
 	//tutup surat masuk
@@ -130,5 +130,10 @@ class Welcome extends CI_Controller {
 	public function no_wilayah()
 	{
 		$this->load->view('super-admin/no_wilayah');
+	}
+
+	public function add_suker()
+	{
+		echo "tambah";
 	}
 }

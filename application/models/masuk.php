@@ -41,7 +41,7 @@ public function editmas($table,$object,$where)
 		$this->db->update($table,$object,$where);
 	}
 
-	//desposisi
+	//desposisi 
 
 	public function despos($table)
  {
