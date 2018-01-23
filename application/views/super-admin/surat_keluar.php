@@ -50,7 +50,7 @@
                                             <td>
                                                 <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i>
                                                 </a>
-                                                <a href="<?php echo base_url('index.php/suker/edit_keluar/').$k->id_keluar; ?>" class="btn btn-primary"><i class="fa fa-edit"></i>
+                                                <a href="<?php echo base_url('index.php/suker/editsuker/').$k->id_keluar; ?>" class="btn btn-primary"><i class="fa fa-edit"></i>
                                                 </a>
                                                 <a href="<?php echo base_url('index.php/suker/delsuker/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                             </td>

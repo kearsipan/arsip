@@ -50,7 +50,7 @@ class Suker extends CI_Controller {
 		$this->load->view('super-admin/edit_suker',$data);
 	}
 
-	public function edit_keluar()
+	public function edit_keluar($id)
 	{
 		
 		$where = array('id_keluar' => $id);
