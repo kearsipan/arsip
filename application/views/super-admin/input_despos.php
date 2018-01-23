@@ -12,10 +12,10 @@
 
 
         <?php foreach ($editmas as $u ): ?>
+<div class="content">
+<div class="container-fluid">
+    <div class="row-md-12">
     <form method="post" action="<?php echo base_url('index.php/Welcome/editmasuk/').$u->id_masuk; ?>">
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="card">
                             <div class="header">
@@ -85,17 +85,11 @@
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-            </div>
         </div>
-        </form 
+        </form>
+
 
     <form method="post" action="<?php echo base_url('index.php/Welcome/add_despos'); ?>">
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="card">
                             <div class="header">
@@ -162,15 +156,10 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
         </form>
-
+</div>
+</div>
+</div>
     </div>
 </div>
 </div>
