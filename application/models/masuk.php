@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Masuk extends CI_Model {
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
-	}
-
 	public function detail($table,$where)
 	{
 		return $this->db->get_where($table,$where);

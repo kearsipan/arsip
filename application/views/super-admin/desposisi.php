@@ -41,6 +41,7 @@
 
                                                 <a href="<?php echo base_url('index.php/Welcome/deldespos/').$u->id_masuk; ?>" class="btn btn-danger">
                                                     <i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('index.php/Welcome/laporan_pdf/').$u->id_masuk; ?>" class="btn btn-success">PDF</a>
                                             </td>
 
                                              <?php } ?>
