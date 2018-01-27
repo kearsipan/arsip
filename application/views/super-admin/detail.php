@@ -52,7 +52,18 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Untuk</label>
-                                                <input type="text" class="form-control border-input" name="untuk">
+                                                <select name="untuk" class="form-control">
+                                                    <option value="Diketahui">Diketahui</option>
+                                                    <option value="Dipersiapkan konsep">Dipersiapkan konsep</option>
+                                                    <option value="Dijawab/direspon">Dijawab/direspon</option>
+                                                    <option value="Dilaksanakan">Dilaksanakan</option>
+                                                    <option value="Dibicarakan/didiskusikan">Dibicarakan/didiskusikan</option>
+                                                    <option value="Diarsipkan">Diarsipkan</option>
+                                                    <option value="Dilaporkan">Dilaporkan</option>
+                                                    <option value="Dikonsultasikan">Dikonsultasikan</option>
+                                                    <option value="Diusulkan">Diusulkan</option>
+                                                    <option value="Lainnya">Lainnya</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>Isi Desposisi</label>

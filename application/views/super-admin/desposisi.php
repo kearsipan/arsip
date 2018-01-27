@@ -41,7 +41,7 @@
 
                                                 <a href="<?php echo base_url('index.php/Welcome/deldespos/').$u->id_masuk; ?>" class="btn btn-danger">
                                                     <i class="fa fa-trash"></i></a>
-                                                <a href="<?php echo base_url('index.php/Welcome/laporan_pdf/').$u->id_masuk; ?>" class="btn btn-success">PDF</a>
+                                                
                                             </td>
 
                                              <?php } ?>
@@ -58,6 +58,7 @@
                                         <th>Asal Surat</th>
                                         <th>Perihal</th>
                                         <th>Terusan</th>
+                                        <th>Aksi</th>
                                     </thead>
                                     <tbody>
                                         <tr>
@@ -71,6 +72,9 @@
                                             <td><?php echo $p->asal_surat; ?></td>
                                             <td><?php echo $p->perihal; ?></td>
                                             <td><?php echo $p->terusan; ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url('index.php/Welcome/laporan_pdf/').$p->id_despos; ?>" class="btn btn-success">PDF</a>
+                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
