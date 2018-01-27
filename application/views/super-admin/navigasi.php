@@ -33,9 +33,9 @@
                               </ul>
                         </li>
 						<li>
-                            <a href="#">
+                            <a href="<?php echo base_url('index.php/login/logout'); ?>">
 								<i class="ti-settings"></i>
-								<p>Settings</p>
+								<p>Logout</p>
                             </a>
                         </li>
                     </ul>

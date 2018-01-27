@@ -7,7 +7,11 @@ class Masuk extends CI_Model {
 	{
 		return $this->db->get_where($table,$where);
 	}
- 
+
+ 	public function cek_login($table,$where)
+ 	{		
+		return $this->db->get_where($table,$where);
+	}	
  //mod surat masuk
  public function tabmasuk($table)
  {
