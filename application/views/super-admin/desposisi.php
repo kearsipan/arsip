@@ -48,6 +48,33 @@
                                          </tr>
                                     </tbody>
                                 </table>
+                                <br>
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <th>No</th>
+                                        <th>Tanggal Surat</th>
+                                        <th>Tanggal Diterima</th>
+                                        <th>Asal Surat</th>
+                                        <th>Perihal</th>
+                                        <th>Terusan</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <?php 
+                                            $no = 1;
+                                            foreach ($posisi as $p) {
+                                            ?>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $p->tgl_surat; ?></td>
+                                            <td><?php echo $p->diterima_tgl; ?></td>
+                                            <td><?php echo $p->asal_surat; ?></td>
+                                            <td><?php echo $p->perihal; ?></td>
+                                            <td><?php echo $p->terusan; ?></td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
     </div>
     </div>
     </div>

@@ -85,6 +85,7 @@ class Welcome extends CI_Controller {
 	public function desposisi()
 	{
 		$data['ms'] = $this->masuk->tabmasuk('surat_masuk');
+		$data['posisi'] = $this->masuk->despos('desposisi');
 		$this->load->view('super-admin/desposisi',$data);
 	}
 
@@ -99,7 +100,11 @@ class Welcome extends CI_Controller {
 	public function add_despos()
 	{
 		
-		$object = array('asal_surat' => $this->input->post('asal'),
+		$object = array('tgl_surat' => $this->input->post('tanggal'),
+						'no_surat' => $this->input->post('nosur'),
+						'perihal' => $this->input->post('perihal'),
+						'kode_agenda' => $this->input->post('kode'),
+						'asal_surat' => $this->input->post('asal'),
 						'diterima_tgl' => $this->input->post('diterima'),
 						'pemberi_despos' => $this->input->post('pemberi'),
 						'terusan' => $this->input->post('terusan'),
