@@ -46,11 +46,12 @@
 </head>
 <body>
 
-<img src="asset/img/i.jpg" height="100" width="80" alt="user"><h3>SMK Negeri 1 Lumajang</h3>
-		<h4>Jl. Hos. Cokroaminoto 161 Lumajang 67311</h4>
-		<h4>Telp. Fax. 0334 - 881866</h4>
-		<h4>E_mail : smkn1lmj@smkn1lmj.sch.id</h4>
-		<h4>Home page : www.smkn1lmj.sch.id</h4>
+<img src="asset/img/i.jpg" height="125" width="95" alt="user">
+		<h3>SMK Negeri 1 Lumajang</h3>
+		<h5>Jl. Hos. Cokroaminoto 161 Lumajang 67311</h5>
+		<h5>Telp. Fax. 0334 - 881866</h5>
+		<h5>E_mail : smkn1lmj@smkn1lmj.sch.id</h5>
+		<h5>Home page : www.smkn1lmj.sch.id</h5>
 	
 
 	<h2 align="center">DISPOSISI</h2>
