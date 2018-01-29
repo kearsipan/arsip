@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26 Jan 2018 pada 09.27
+-- Generation Time: 29 Jan 2018 pada 03.04
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -41,6 +41,7 @@ CREATE TABLE `arsip` (
 
 CREATE TABLE `desposisi` (
   `id_despos` int(11) NOT NULL,
+  `id_masuk` int(11) NOT NULL,
   `tgl_surat` date NOT NULL,
   `asal_surat` varchar(200) NOT NULL,
   `no_surat` varchar(225) NOT NULL,
@@ -57,8 +58,9 @@ CREATE TABLE `desposisi` (
 -- Dumping data untuk tabel `desposisi`
 --
 
-INSERT INTO `desposisi` (`id_despos`, `tgl_surat`, `asal_surat`, `no_surat`, `perihal`, `diterima_tgl`, `kode_agenda`, `pemberi_despos`, `untuk`, `isi_desposisi`, `terusan`) VALUES
-(1, '0000-00-00', 'sura', '', '', '2018-01-04', '', 'kepsek', 'ko', 'apa aja', 'wk');
+INSERT INTO `desposisi` (`id_despos`, `id_masuk`, `tgl_surat`, `asal_surat`, `no_surat`, `perihal`, `diterima_tgl`, `kode_agenda`, `pemberi_despos`, `untuk`, `isi_desposisi`, `terusan`) VALUES
+(3, 0, '2018-01-06', 'jogoyudan', '445/00', 'surat cinta abiku <3', '2018-01-07', '6566.99', 'nadiyatiq', 'cintaku abiku', 'aku mencintaimu abihhhh', 'Lainnya'),
+(4, 0, '2018-01-04', 'selokgondang', '443.00', 'penerimaan', '2018-01-02', '876/99', 'jojon', 'Dilaksanakan', 'arsipkan', 'WK2');
 
 -- --------------------------------------------------------
 
@@ -211,7 +213,7 @@ ALTER TABLE `arsip`
 -- AUTO_INCREMENT for table `desposisi`
 --
 ALTER TABLE `desposisi`
-  MODIFY `id_despos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_despos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kode_agenda`
