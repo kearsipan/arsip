@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Admin extends CI_Controller {
 
 	public function __construct()
 	{
@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('masuk');
 		$this->load->helper('url');
 
-		if ($this->session->userdata('level') != "user") {
+		if ($this->session->userdata('level') != "admin") {
 			redirect(base_url('login'));
 		}
 
@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 
 	public function dashboard()
 	{
-		$this->load->view('super-admin/dashboard');
+		$this->load->view('admin/dashboard');
 	}
 
 	
