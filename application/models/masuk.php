@@ -79,6 +79,25 @@ public function editsuker($table,$object,$where)
 	{
 		$this->db->update($table,$object,$where);
 	}
+
+	//nomor agenda
+
+	public function agenda($table)
+	 {
+	 	$query = $this->db->get('kode_agenda')->result();
+	 	return $query;
+	 }
+
+	 public function add_agenda($table,$object)
+		{
+			$this->db->insert($table,$object);
+		}
+
+		public function get_agenda()
+	{
+		$query = $this->db->query("SELECT MAX(id) AS id FROM kode_agenda");
+		return $query->row_array();
+	}
 	
 
 }

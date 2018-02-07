@@ -10,6 +10,7 @@
     <?php include 'sidebar.php'; ?>
     <div class="main-panel">
     <?php include 'navigasi.php'; ?>
+    
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -48,8 +49,6 @@
                                             <td><?php echo $k->perihal; ?></td>
                                             <td><?php echo $k->pengelola; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i>
-                                                </a>
                                                 <a href="<?php echo base_url('index.php/suker/editsuker/').$k->id_keluar; ?>" class="btn btn-primary"><i class="fa fa-edit"></i>
                                                 </a>
                                                 <a href="<?php echo base_url('index.php/suker/delsuker/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -62,36 +61,10 @@
                         </div>
                     </div>
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
-
 
     </div>
+</div>
+</div>
 </div>
 
 

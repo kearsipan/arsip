@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<?php include 'css.php'; ?>
+    <?php include 'css.php'; ?>
 
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="main-panel">
     <?php include 'navigasi.php'; ?>
 
-    <form method="post" action="<?php echo base_url('index.php/Welcome/add_masuk'); ?>">
+    <form method="post" action="<?php echo base_url('index.php/admin/proses_despos/'); ?>">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -21,11 +21,10 @@
                                 <h4 class="title">Tambah Agenda Surat Masuk</h4>
                             </div>
                             <div class="content">
-                                <form>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Tanggal Surat</label>
+                                                <label>Tanggal Terima</label>
                                                 <input type="date" class="form-control border-input"  name="tanggal">
                                             </div>
                                         </div>
@@ -33,38 +32,23 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Kode Agenda</label>
-                                                <input list="kode" name="kode" style="border: 1px solid gray" class="form-control">
-                                                <datalist id="kode">
-                                                    <?php foreach ($kode as $d): ?>
-                                                        <option value="<?php echo $d->no_agenda; ?>">
-                                                    <?php endforeach ?>
-                                                </datalist>    
+                                                <label>Isi Desposisi</label>
+                                                <input type="text" class="form-control border-input" name="isi">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Nomor Surat</label>
-                                                <input type="text" class="form-control border-input" name="nosur">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Dari</label>
-                                                <input type="text" class="form-control border-input" name="dari">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Perihal</label>
-                                                <input type="text" class="form-control border-input" name="perihal">
+                                                <label>Di Teruskan</label>
+                                                <select name="terukan" class="form-control">
+                                                    <option value="KTU">KTU</option>
+                                                    <option value="WK1">WK1</option>
+                                                    <option value="WK2">WK2</option>
+                                                    <option value="WK3">WK3</option>
+                                                    <option value="WK4">WK4</option>
+                                                    <option value="KUP">KUP</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -72,8 +56,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Pengelola</label>
-                                                <input type="text" class="form-control border-input" name="pengelola">
+                                                <label>Untuk</label>
+                                                <input type="text" class="form-control border-input" name="untuk">
                                             </div>
                                         </div>
                                     </div>
@@ -81,10 +65,9 @@
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Tambah</button>
                                     </div><br>
                                     <div class="text-center">
-                                        <a href="<?php echo base_url('index.php/Welcome/masuk'); ?>" class="btn btn-primary">Kembali</a>
+                                        <a href="<?php echo base_url('index.php/admin/masuk'); ?>" class="btn btn-primary">Kembali</a>
                                     </div>
                                     <div class="clearfix"></div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -118,7 +101,7 @@
                         </li>
                     </ul>
                 </nav>
-				<div class="copyright pull-right">
+                <div class="copyright pull-right">
                     &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
                 </div>
             </div>
@@ -131,5 +114,4 @@
 </body>
 
     <?php include 'js.php'; ?>
-    
 </html>

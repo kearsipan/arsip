@@ -9,45 +9,39 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="<?php echo base_url('index.php/Welcome/index/'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/dashboard'); ?>">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/Welcome/masuk/'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/masuk/'); ?>">
                         <i class="ti-view-list-alt"></i>
                         <p>AGENDA SURAT MASUK</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/Welcome/desposisi'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/desposisi'); ?>">
                         <i class="ti-text"></i>
                         <p>DISPOSISI</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/suker/suker'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/suker'); ?>">
                         <i class="ti-pencil-alt2"></i>
                         <p>AGENDA SURAT KELUAR</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/Welcome/arsip/'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/arsip/'); ?>">
                         <i class="ti-map"></i>
                         <p>ARSIP</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('index.php/Welcome/no_agenda'); ?>">
+                    <a href="<?php echo base_url('index.php/admin/no_agenda'); ?>">
                         <i class="ti-bell"></i>
                         <p>NOMOR AGENDA</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Welcome/no_wilayah'); ?>">
-                        <i class="ti-export"></i>
-                        <p>NOMOR WILAYAH</p>
                     </a>
                 </li>
             </ul>

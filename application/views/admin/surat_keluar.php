@@ -16,10 +16,7 @@
                     <div>
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Agenda Surat Keluar
-                                    <a href="<?php echo base_url('index.php/suker/input_keluar'); ?>" class="btn btn-warning">Tambah</a>
-                                </h4>
-                              
+                                <h4 class="title">Agenda Surat Keluar</h4> 
                             </div>
                             
                             <div class="content table-responsive table-full-width">
@@ -32,7 +29,6 @@
                                         <th>Kepada</th>
                                         <th>Perihal</th>
                                         <th>Pengelola</th>
-                                        <th>Aksi</th>
                                     </thead>
                                     <tbody>
                                         <?php 
@@ -47,13 +43,7 @@
                                             <td><?php echo $k->kepada; ?></td>
                                             <td><?php echo $k->perihal; ?></td>
                                             <td><?php echo $k->pengelola; ?></td>
-                                            <td>
-                                                <a href="<?php echo base_url('index.php/Welcome/'); ?>" class="btn btn-info"><i class="fa fa-eye"></i>
-                                                </a>
-                                                <a href="<?php echo base_url('index.php/suker/editsuker/').$k->id_keluar; ?>" class="btn btn-primary"><i class="fa fa-edit"></i>
-                                                </a>
-                                                <a href="<?php echo base_url('index.php/suker/delsuker/').$k->id_keluar; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                
                                              <?php } ?>
                                          </tr>
                                     </tbody>

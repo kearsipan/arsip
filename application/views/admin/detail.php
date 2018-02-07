@@ -10,7 +10,7 @@
 <div class="main-panel">
     <?php include 'navigasi.php'; ?>
 
-                <form method="post" action="<?php echo base_url('index.php/Welcome/add_despos'); ?>">
+                <form method="post" action="<?php echo base_url('index.php/admin/add_despos'); ?>">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="header">

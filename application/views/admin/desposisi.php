@@ -39,13 +39,7 @@
                                             <td><?php echo $u->di_teruskan; ?></td>
                                             <td><?php echo $u->untuk ?></td>
                                             <td>
-                                                <a class="btn btn-info" href="<?php echo base_url('index.php/Welcome/proses_arsip/').$u->id_masuk; ?>">Arsip</a>
-                                                <a href="<?php echo base_url('index.php/Welcome/detail/').$u->id_masuk; ?>" class="btn btn-info">
-                                                    <i class="fa fa-eye"></i>Detail</a>
-
-                                                <a href="<?php echo base_url('index.php/Welcome/deldespos/').$u->id_masuk; ?>" class="btn btn-danger">
-                                                    <i class="fa fa-trash"></i></a>
-                                                
+                                                <a href="<?php echo base_url('admin/lihat_despos/').$u->id_masuk; ?>" class="btn btn-success">Desposisi</a>
                                             </td>
 
                                              <?php } ?>

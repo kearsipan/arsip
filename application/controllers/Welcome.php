@@ -32,7 +32,8 @@ class Welcome extends CI_Controller {
 
 	public function input_masuk()
 	{
-		$this->load->view('super-admin/input-masuk');
+		$data['kode'] = $this->db->get('kode_agenda')->result();
+		$this->load->view('super-admin/input-masuk' ,$data);
 	}
 
 	public function add_masuk()
@@ -45,7 +46,8 @@ class Welcome extends CI_Controller {
 						'no_surat' => $this->input->post('nosur'),
 						'dari' => $this->input->post('dari'),
 						'perihal' => $this->input->post('perihal'),
-						'pengelola'=>$this->input->post('pengelola'));
+						'pengelola'=>$this->input->post('pengelola'),
+						'arsip' => 0);
 		$this->masuk->add_masuk('surat_masuk',$object);
 		redirect('Welcome/masuk');
 	}
@@ -114,18 +116,7 @@ class Welcome extends CI_Controller {
 		redirect('Welcome/desposisi');
 	}
 
-	public function proses_arsip($id)
-	{
-		$where = array('id_masuk' => $id);
-		$data  = array('arsip' => 1);
-
-		$res = $this->db->update('surat_masuk' ,$data ,$where);
-
-		if ($res >= 1) {
-				redirect('Welcome/desposisi');
-			}	
-
-	}
+	
 
 
 	//tutup desposisi
@@ -145,14 +136,39 @@ class Welcome extends CI_Controller {
 		$this->load->view('super-admin/datailarsip' ,$data);
 	}
 
-	public function no_agenda()
+	public function proses_arsip($id)
 	{
-		$this->load->view('super-admin/no_agenda');
+		$where = array('id_masuk' => $id);
+		$data  = array('arsip' => 1);
+
+		$res = $this->db->update('surat_masuk' ,$data ,$where);
+
+		if ($res >= 1) {
+				redirect('Welcome/desposisi');
+			}	
+
 	}
 
-	public function no_wilayah()
+	//tutup arsip
+
+	public function no_agenda()
 	{
-		$this->load->view('super-admin/no_wilayah');
+		$data['agenda'] = $this->db->get('kode_agenda')->result();
+		$this->load->view('super-admin/no_agenda',$data);
+	}
+
+	public function input_agenda()
+	{
+		$this->load->view('super-admin/input_agenda');
+	}
+
+	public function agenda()
+	{
+		$id = $this->masuk->get_agenda();
+		$object = array('no_agenda' => $this->input->post('no_agenda'),
+						'keterangan' => $this->input->post('keterangan'));
+		$this->masuk->add_agenda('kode_agenda',$object);
+		redirect('Welcome/no_agenda');
 	}
 
 	//laporan pdf desposisi

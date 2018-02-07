@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<?php include 'css.php'; ?>
-
+    <script src="<?php echo base_url('asset/js/jquery.min.js'); ?>"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -17,12 +17,13 @@
                     <div>
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Agenda Surat Masuk
-                                    <a href="<?php echo base_url('index.php/Welcome/input_masuk'); ?>" class="btn btn-warning">Tambah</a>
-                                </h4>
+                              
+                                    <h4 class="title">Agenda Surat Masuk
+                                        <a href="<?php echo base_url('index.php/Welcome/input_masuk'); ?>" class="btn btn-warning">Tambah</a>
+                                    </h4>
                               
                             </div>
-                            
+                            <br>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-striped">
                                     <thead>

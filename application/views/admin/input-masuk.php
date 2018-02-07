@@ -11,7 +11,7 @@
     <div class="main-panel">
     <?php include 'navigasi.php'; ?>
 
-    <form method="post" action="<?php echo base_url('index.php/Welcome/add_masuk'); ?>">
+    <form method="post" action="<?php echo base_url('index.php/admin/add_masuk'); ?>">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">

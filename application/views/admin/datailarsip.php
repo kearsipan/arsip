@@ -18,7 +18,7 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Agenda Surat Masuk
-                                    <a href="<?php echo base_url('index.php/Welcome/input_masuk'); ?>" class="btn btn-warning">Tambah</a>
+                                    <a href="<?php echo base_url('index.php/admin/input_masuk'); ?>" class="btn btn-warning">Tambah</a>
                                 </h4>
                               
                             </div>

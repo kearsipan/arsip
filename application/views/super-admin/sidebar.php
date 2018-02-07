@@ -44,12 +44,6 @@
                         <p>NOMOR AGENDA</p>
                     </a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Welcome/no_wilayah'); ?>">
-                        <i class="ti-export"></i>
-                        <p>NOMOR WILAYAH</p>
-                    </a>
-                </li>
             </ul>
     	</div>
     </div>

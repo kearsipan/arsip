@@ -27,56 +27,7 @@ class Admin extends CI_Controller {
 	public function masuk()
 	{
 		$data['masuk'] = $this->masuk->tabmasuk('surat_masuk');
-		$this->load->view('super-admin/surat_masuk',$data);
-	}
-
-	public function input_masuk()
-	{
-		$this->load->view('super-admin/input-masuk');
-	}
-
-	public function add_masuk()
-	{
-		
-		$id = $this->masuk->get_masuk();
-		$object = array(
-						'tgl_surat' => $this->input->post('tanggal'),
-						'kode_agenda' => $this->input->post('kode'),
-						'no_surat' => $this->input->post('nosur'),
-						'dari' => $this->input->post('dari'),
-						'perihal' => $this->input->post('perihal'),
-						'pengelola'=>$this->input->post('pengelola'));
-		$this->masuk->add_masuk('surat_masuk',$object);
-		redirect('Welcome/masuk');
-	}
-
-	public function delmasuk($id)
-	{
-		$where = array('id_masuk' =>$id );
-		$this->masuk->delmasuk('surat_masuk',$where);
-		redirect('Welcome/masuk');
-	}
-
-	public function editmas($id)
-	{
-		$where = array('id_masuk' => $id);
-		$data['editmas'] = $this->masuk->detail('surat_masuk',$where)->result();
-		$this->load->view('super-admin/edit_masuk',$data);
-	}
-
-	public function editmasuk($id)
-	{
-		$where = array('id_masuk' => $id);
-		$object = array('id_masuk' => $id, 
-						'tgl_surat' => $this->input->post('tanggal'),
-						'kode_agenda' => $this->input->post('kode'),
-						'no_surat' => $this->input->post('nosur'),
-						'dari' => $this->input->post('dari'),
-						'perihal' => $this->input->post('perihal'),
-						'pengelola'=>$this->input->post('pengelola'));
-		//die(var_dump($object));
-		$this->masuk->editmas('surat_masuk',$object,$where);
-		redirect('Welcome/masuk');
+		$this->load->view('admin/surat_masuk',$data);
 	}
 
 	//tutup surat masuk
@@ -84,9 +35,9 @@ class Admin extends CI_Controller {
 	//desposisi
 	public function desposisi()
 	{
-		$where = array('arsip' => '0');
+		$where = array('arsip' => '1');
 		$data['ms'] = $this->db->get_where('surat_masuk' ,$where)->result();
-		$this->load->view('super-admin/desposisi',$data);
+		$this->load->view('admin/desposisi',$data);
 	}
 
 	public function detail($id)
@@ -94,25 +45,34 @@ class Admin extends CI_Controller {
 		$where = array('id_despos' => $id);
 		$data['editmas'] = $this->db->get('surat_masuk',$where)->result();
 		$data['despos'] = $this->masuk->detail('desposisi',$where)->result();
-		$this->load->view('super-admin/detail',$data);
+		$this->load->view('admin/detail',$data);
 	}
 
-	public function add_despos()
+	public function lihat_despos($id)
 	{
-		
-		$object = array('tgl_surat' => $this->input->post('tanggal'),
-						'no_surat' => $this->input->post('nosur'),
-						'perihal' => $this->input->post('perihal'),
-						'kode_agenda' => $this->input->post('kode'),
-						'asal_surat' => $this->input->post('asal'),
-						'diterima_tgl' => $this->input->post('diterima'),
-						'pemberi_despos' => $this->input->post('pemberi'),
-						'terusan' => $this->input->post('terusan'),
-						'untuk' => $this->input->post('untuk'),
-						'isi_desposisi'=>$this->input->post('isi'));
-		$this->masuk->add_despos('desposisi',$object);
-		redirect('Welcome/desposisi');
+		$where = array();
+		$data['ms'] = $this->db->get_where('surat_masuk' ,$where)->result();
+		$this->load->view('admin/lihat_despos',$data);
 	}
+
+	public function proses_despos($id)
+	{
+		$id = array('id_masuk' => $id);
+		$data = array(
+			'diterima_tgl' => $this->input->post('tanggal'),
+			'isi_desposisi' => $this->input->post('isi'),
+			'di_teruskan' => $this->input->post('teruskan'),
+			'untuk' => $this->input->post('untuk'),
+					); 
+		$res = $this->db->update('surat_masuk',$data ,$id);
+		if ($res > 0) {
+			redirect('admin/desposisi');
+		}
+	}
+
+
+
+
 
 	public function proses_arsip($id)
 	{
@@ -122,7 +82,7 @@ class Admin extends CI_Controller {
 		$res = $this->db->update('surat_masuk' ,$data ,$where);
 
 		if ($res >= 1) {
-				redirect('Welcome/desposisi');
+				redirect('admin/desposisi');
 			}	
 
 	}
@@ -133,7 +93,7 @@ class Admin extends CI_Controller {
 	public function arsip()
 	{
 		$data['arsip'] = $this->db->get('kode_agenda')->result();
-		$this->load->view('super-admin/arsip' ,$data);
+		$this->load->view('admin/arsip' ,$data);
 	}
 
 	public function detailarsip($kode)
@@ -142,17 +102,12 @@ class Admin extends CI_Controller {
 					  'arsip' => 1);
 
 		$data['data'] = $this->db->get_where('surat_masuk' ,$kode)->result();
-		$this->load->view('super-admin/datailarsip' ,$data);
+		$this->load->view('admin/datailarsip' ,$data);
 	}
 
 	public function no_agenda()
 	{
-		$this->load->view('super-admin/no_agenda');
-	}
-
-	public function no_wilayah()
-	{
-		$this->load->view('super-admin/no_wilayah');
+		$this->load->view('admin/no_agenda');
 	}
 
 	//laporan pdf desposisi
@@ -170,5 +125,11 @@ class Admin extends CI_Controller {
     $this->pdf->load_view('pdf', $data);
 
 
+	}
+
+	public function suker()
+	{
+		$data['suker'] = $this->masuk->suker('surat_keluar');
+		$this->load->view('admin/surat_keluar',$data);
 	}
 }

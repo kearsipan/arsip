@@ -31,7 +31,9 @@
                                         <tr>
                                             <td><?php echo $d->no_agenda; ?></td>
                                             <td><?php echo $d->keterangan; ?></td>
-                                            <td><a href="<?php echo base_url('index.php/Welcome/detailarsip/').$d->no_agenda; ?>" class="btn btn-danger">Lihat</a></td>
+                                            <td><a href="<?php echo base_url('index.php/Welcome/detailarsip/').$d->no_agenda; ?>" class="btn btn-danger">
+                                                <i class="fa fa-eye"></i>lihat
+                                            </a></td>
                                         </tr>
                                         <?php endforeach ?>
                                     </tbody>
@@ -46,35 +48,8 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
-
-
+    </div>
+</div>
     </div>
 </div>
 
