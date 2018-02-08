@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Jan 2018 pada 03.04
+-- Generation Time: 08 Feb 2018 pada 02.38
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -54,14 +54,6 @@ CREATE TABLE `desposisi` (
   `terusan` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `desposisi`
---
-
-INSERT INTO `desposisi` (`id_despos`, `id_masuk`, `tgl_surat`, `asal_surat`, `no_surat`, `perihal`, `diterima_tgl`, `kode_agenda`, `pemberi_despos`, `untuk`, `isi_desposisi`, `terusan`) VALUES
-(3, 0, '2018-01-06', 'jogoyudan', '445/00', 'surat cinta abiku <3', '2018-01-07', '6566.99', 'nadiyatiq', 'cintaku abiku', 'aku mencintaimu abihhhh', 'Lainnya'),
-(4, 0, '2018-01-04', 'selokgondang', '443.00', 'penerimaan', '2018-01-02', '876/99', 'jojon', 'Dilaksanakan', 'arsipkan', 'WK2');
-
 -- --------------------------------------------------------
 
 --
@@ -69,20 +61,33 @@ INSERT INTO `desposisi` (`id_despos`, `id_masuk`, `tgl_surat`, `asal_surat`, `no
 --
 
 CREATE TABLE `kode_agenda` (
-  `no_agenda` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `no_agenda` varchar(20) NOT NULL,
   `keterangan` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Struktur dari tabel `kode_wilayah`
+-- Dumping data untuk tabel `kode_agenda`
 --
 
-CREATE TABLE `kode_wilayah` (
-  `kode` int(11) NOT NULL,
-  `wilayah` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `kode_agenda` (`id`, `no_agenda`, `keterangan`) VALUES
+(1, '001', 'kepolisian'),
+(2, '002', 'pendidikan'),
+(3, '003', 'sekolah'),
+(4, '004', 'sekolah kejuruan'),
+(5, '005', 'kegiatan SEK / PT'),
+(6, '006', 'KEPEGAWAIAN'),
+(7, '007', 'KEUANGAN'),
+(8, '008', 'PENUNJUKAN'),
+(9, '009', 'TIM / PENGADAAN'),
+(10, '010', 'SPK / KONTRAK'),
+(11, '011', 'KEARSIPAN'),
+(12, '012', 'SURAT PENGANTAR'),
+(13, '013', 'SPT ( SPPD )'),
+(14, '014', 'PEMBERHENTIAN'),
+(15, '015', 'BANTUAN DANA'),
+(16, '016', 'PELELANGAN'),
+(17, '017', 'UJIAN / IJAZAH');
 
 -- --------------------------------------------------------
 
@@ -105,7 +110,8 @@ CREATE TABLE `surat_keluar` (
 --
 
 INSERT INTO `surat_keluar` (`id_keluar`, `tgl_surat`, `kode_agenda`, `no_surat`, `kepada`, `perihal`, `pengelola`) VALUES
-(2, '2018-01-03', '0987', '876/456', 'abi', 'surat', 'nadia');
+(2, '2018-01-03', '0987', '876/456', 'abi', 'surat', 'nadia'),
+(3, '2018-02-15', '003', '123.098.99', 'SMA 1 Lumajang', 'Rapat', 'Hilmi');
 
 -- --------------------------------------------------------
 
@@ -120,18 +126,27 @@ CREATE TABLE `surat_masuk` (
   `no_surat` varchar(11) NOT NULL,
   `dari` varchar(200) NOT NULL,
   `perihal` varchar(200) NOT NULL,
-  `pengelola` varchar(200) NOT NULL
+  `pengelola` varchar(200) NOT NULL,
+  `tgl_terima` date NOT NULL,
+  `isi_desposisi` varchar(200) NOT NULL,
+  `di_teruskan` varchar(200) NOT NULL,
+  `untuk` varchar(200) NOT NULL,
+  `arsip` varchar(200) NOT NULL,
+  `disposisi` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `surat_masuk`
 --
 
-INSERT INTO `surat_masuk` (`id_masuk`, `tgl_surat`, `kode_agenda`, `no_surat`, `dari`, `perihal`, `pengelola`) VALUES
-(4, '2018-01-17', '567', '123/099', 'bellaa', 'rapat', 'nadia'),
-(5, '2018-01-12', '32/09', '99.09/99', 'nadiahhh', 'ijik', 'iki'),
-(6, '2018-01-19', '123.000', '99/876', 'ninik', 'nunuk', 'mamahhh'),
-(7, '2018-01-31', '765/88', '765.88', 'mumunn', 'mmimmin', 'kiki');
+INSERT INTO `surat_masuk` (`id_masuk`, `tgl_surat`, `kode_agenda`, `no_surat`, `dari`, `perihal`, `pengelola`, `tgl_terima`, `isi_desposisi`, `di_teruskan`, `untuk`, `arsip`, `disposisi`) VALUES
+(1, '2018-02-05', '001', '933/STIE/XI', 'Widya Gama', 'Ucapan terimakasih', 'nadiyatiq', '0000-00-00', '', '', '', '1', ''),
+(2, '2018-02-10', '004', '098/XI/2018', 'Pertanian', 'pemberian dana', 'Helmi Ustadi', '0000-00-00', '', '', '', '1', ''),
+(3, '2018-02-14', '002', '675/VII/201', 'SMKN 2 Lumajang', 'lomba antar sekolah', 'Bella', '0000-00-00', '', '', '', '1', ''),
+(4, '2018-02-02', '003', '097/III/23/', 'PLN', 'pemadaman', 'Miskum', '0000-00-00', '', '', '', '1', ''),
+(5, '2018-02-02', '002', '43/099/2016', 'kepolisian', 'pendaftaran akpol', 'Siti Syarofah Dinda Solehah', '0000-00-00', '', '', '', '1', ''),
+(8, '2018-02-09', '007', '887/2/2019', 'perpajakan', 'selamat', 'iin', '0000-00-00', '', '', '', '1', ''),
+(9, '2018-02-24', '005', '08/999/7003', 'saya', 'saya', 'saya', '0000-00-00', '', '', '', '1', '');
 
 -- --------------------------------------------------------
 
@@ -142,8 +157,8 @@ INSERT INTO `surat_masuk` (`id_masuk`, `tgl_surat`, `kode_agenda`, `no_surat`, `
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `level` enum('superadmin','admin','','') NOT NULL
+  `password` varchar(255) NOT NULL,
+  `level` enum('admin','user','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -151,7 +166,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `level`) VALUES
-(1, 'admin', 'admin', 'admin');
+(1, 'admin', 'admin', 'admin'),
+(2, 'user', 'user', 'user');
 
 --
 -- Indexes for dumped tables
@@ -173,13 +189,7 @@ ALTER TABLE `desposisi`
 -- Indexes for table `kode_agenda`
 --
 ALTER TABLE `kode_agenda`
-  ADD PRIMARY KEY (`no_agenda`);
-
---
--- Indexes for table `kode_wilayah`
---
-ALTER TABLE `kode_wilayah`
-  ADD PRIMARY KEY (`kode`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `surat_keluar`
@@ -197,7 +207,7 @@ ALTER TABLE `surat_masuk`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -213,31 +223,25 @@ ALTER TABLE `arsip`
 -- AUTO_INCREMENT for table `desposisi`
 --
 ALTER TABLE `desposisi`
-  MODIFY `id_despos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_despos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kode_agenda`
 --
 ALTER TABLE `kode_agenda`
-  MODIFY `no_agenda` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `kode_wilayah`
---
-ALTER TABLE `kode_wilayah`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  MODIFY `id_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

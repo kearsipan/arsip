@@ -15,8 +15,8 @@
                     <div class="col-md-12">
                         <div class="card card-plain">
                             <div class="header">
-                                <h4 class="title">Table on Plain Background</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title"> Tempat kearsipan </h4>
+                                <p class="category"> bisa dilihat dari perkode </p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover">
